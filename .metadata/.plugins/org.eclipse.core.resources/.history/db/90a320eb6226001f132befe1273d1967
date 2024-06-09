@@ -1,0 +1,40 @@
+package com.exec.coll;
+
+public class Student {
+	
+	private int rollno;
+	private String name;
+	private int age;
+	private String course;
+	
+	public Student(int rollno,String name,int age,String course)
+	{
+		this.rollno=rollno;
+		this.name=name;
+		this.age=age;
+		this.course=course;
+	}
+
+	public static void main(String[] args) throws Exception {
+		// TODO Auto-generated method stub
+		
+		Student student=new Student(1,"Sachin",25,"Computer science");
+		
+		try
+		{
+			if(student.age <= 15 || student.age >= 21) {
+				throw new Exception("AgeNotWithinRangeException");
+			}
+			else
+			{
+				System.out.println("Eligible for voting");
+			}
+		}
+		catch(Exception exception)
+        {
+            System.out.println(exception.getMessage());
+        }
+
+	}
+
+}
